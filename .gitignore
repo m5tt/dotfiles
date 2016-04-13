@@ -1,0 +1,5 @@
+ncmpcpp/error.log
+vim/plugged/
+vim/autoload
+vim/.netrwhist
+mpdcron/mpdcron.pid
