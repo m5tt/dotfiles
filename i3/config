@@ -1,0 +1,211 @@
+
+# i3 config file (v4)
+#
+# Please see http://i3wm.org/docs/userguide.html for a complete reference!
+
+set $mod Mod4
+
+# font for window titles. ISO 10646 = Unicode
+#font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# start a terminal
+# using rxvt daemon - so start client
+bindsym $mod+Return exec urxvtc
+
+# kill focused window
+bindsym $mod+Shift+Q kill
+
+# start rofi (nicer dmenu)
+bindsym $mod+d exec rofi -show run
+
+# change focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# move focused window
+bindsym $mod+Shift+H move left
+bindsym $mod+Shift+J move down
+bindsym $mod+Shift+K move up
+bindsym $mod+Shift+L move right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# split in horizontal orientation
+bindsym $mod+Ctrl+h split h
+
+# split in vertical orientation
+bindsym $mod+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen
+
+# change container layout (stacked, tabbed, default)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout default
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# focus the child container
+#bindcode $mod+d focus child
+
+# switch to workspace
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3
+bindsym $mod+4 workspace 4
+bindsym $mod+5 workspace 5
+bindsym $mod+6 workspace 6
+bindsym $mod+7 workspace 7
+bindsym $mod+8 workspace 8
+bindsym $mod+9 workspace 9
+bindsym $mod+0 workspace 10
+
+# move focused container to workspace
+bindsym $mod+Shift+exclam move container to workspace 1
+bindsym $mod+Shift+at move container to workspace 2
+bindsym $mod+Shift+numbersign move container to workspace 3
+bindsym $mod+Shift+dollar move container to workspace 4
+bindsym $mod+Shift+percent move container to workspace 5
+bindsym $mod+Shift+asciicircum move container to workspace 6
+bindsym $mod+Shift+ampersand move container to workspace 7
+bindsym $mod+Shift+asterisk move container to workspace 8
+bindsym $mod+Shift+parenleft move container to workspace 9
+bindsym $mod+Shift+parenright move container to workspace 10
+
+# reload the configuration file
+bindsym $mod+Shift+C reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+R restart
+# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+Control+E exit
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing up will shrink the window’s height.
+        # Pressing down will grow the window’s height.
+        bindsym l resize shrink width 3 px or 3 ppt
+        bindsym k resize grow height 3 px or 3 ppt
+        bindsym j resize shrink height 3 px or 3 ppt
+        bindsym h resize grow width 3 px or 3 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym 113 resize shrink width 3 px or 3 ppt
+        bindsym 116 resize grow height 3 px or 3 ppt
+        bindsym 111 resize shrink height 3 px or 3 ppt
+        bindsym 114 resize grow width 3 px or 3 ppt
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+
+## Lock screen with i3lock
+bindsym $mod+c exec i3lock -c 000000
+
+## Firefox with in jail using firejail
+## Use UTC as timezone
+bindsym $mod+b exec TZ=UTC firejail --noroot --private=~/Firefox firefox -P default
+bindsym $mod+Shift+b exec TZ=UTC firejail --noroot --private=~/Firefox firefox -P Other
+
+
+## Window title colors
+client.focused           #1d1d1d #222222 #ffffff #222222
+client.focused_inactive  #333333 #333333 #888888 #333333
+client.unfocused         #333333 #333333 #888888 #333333
+client.urgent            #2f343a #900000 #ffffff #900000
+
+## Font for window titles
+font pango:Inconsolata 14
+
+## Status bar
+## Use i3blocks
+bar {
+    status_command i3blocks
+    font pango:Inconsolata, Icons 16px
+    position bottom
+    colors {
+      background #222222
+      statusline #ffffff
+      focused_workspace #0073c6 #0073c6 #ffffff
+      active_workspace #0073c6 ##0073c6 #ffffff
+      inactive_workspace #222222 #222222 #ffffff
+      urgent_workspace #2f343a #900000 #ffffff
+    }
+}
+
+## Turn off "focus follow mouse"
+focus_follows_mouse no
+
+## Music commands
+bindsym $mod+p  exec music toggle 
+bindsym $mod+n  exec music next 
+bindsym $mod+m  exec music stop
+
+## Volume and toggle mute
+## Send signals for i3blocks
+bindsym $mod+period exec amixer set Master 3%+ && pkill -SIGRTMIN+10 i3blocks       ## Raise volume
+bindsym $mod+comma exec amixer set Master 3%- && pkill -SIGRTMIN+10 i3blocks        ## Lower volume
+bindsym $mod+Shift+P exec amixer set Master toggle && pkill -SIGRTMIN+10 i3blocks   ## Mute
+
+
+## Default border - 1pixel
+new_window 1pixel
+
+## Toggle border style (window-title - 1px - nothing)
+bindsym $mod+o border toggle
+
+## Screenshot key
+bindsym Print exec maim -i $(xdotool getactivewindow)
+
+## Open up a small floating terminal for quick commands
+for_window [instance="__special__"] floating enable
+bindsym $mod+Shift+Return exec --no-startup-id urxvtc -name __special__ -geometry 100x15
+
+## Brightness
+bindsym $mod+i exec xbacklight -inc 5
+bindsym $mod+u exec xbacklight -dec 5
+
+## Fine tuning brightness
+bindsym $mod+Shift+i exec xbacklight -inc 2
+bindsym $mod+Shift+u exec xbacklight -dec 2
+
+## Kill backlight
+bindsym $mod+Ctrl+u exec xbacklight -set 0
+
+## Redshift turn on/off
+bindsym $mod+y exec redshift -O 4000
+bindsym $mod+Shift+y exec redshift -O 6500
+
+## Autostart
+exec --no-startup-id urxvtc
+exec --no-startup-id redshift -O 4000

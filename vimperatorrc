@@ -1,0 +1,5 @@
+colorscheme darkness
+set gui=nonavigation
+
+noremap j 3j
+noremap k 3k

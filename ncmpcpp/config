@@ -1,0 +1,75 @@
+ncmpcpp_directory = "/home/matt/.ncmpcpp"
+
+## MPD
+mpd_host = "localhost"
+mpd_port = "6600"
+mpd_music_dir = "/home/matt/Music/"
+mpd_crossfade_time = "5"
+
+# Bars
+statusbar_visibility = "yes"
+header_visibility = "no"
+titles_visibility = "no"
+
+# Delays
+playlist_disable_highlight_delay = "0"
+message_delay_time = "1"
+
+# Format
+#song_list_format = "$4%t$9 $7%a$9 $3%b$9 $R $6%l$9"
+song_columns_list_format = "$L (40) [yellow] {t} (20) [cyan] {a} $R (25) [green] {b} (5) [magenta] {l}"
+#song_list_format = "$L (40) [yellow] {t} (20) [cyan] {a} $R (25) [green] {b} (10) [magenta] {l}"
+# shows up in classic mode at the bottom
+song_status_format = "$4%a $7%f $3%b$1"
+#now_playing_prefix = "$7 » "
+playlist_display_mode = "columns"
+playlist_editor_display_mode = "columns"
+search_engine_display_mode = columns
+
+# Colors
+colors_enabled = "yes"
+visualizer_color = "cyan"
+color1 = "red"
+color2 = "green"
+empty_tag_color = "red"
+main_window_color = "cyan"
+main_window_highlight_color = "cyan"
+active_column_color = "green"
+active_window_border = "black"
+window_border_color = "red"
+statusbar_color = "red"
+header_window_color = "magenta"
+volume_color = "magenta"
+state_line_color = "red"
+
+# Progress bar
+progressbar_color = "red"
+progressbar_elapsed_color="cyan"
+progressbar_look = "── "
+
+# Misc
+save_absolute_paths_in_playlists "yes"
+ask_before_clearing_playlists = "no"
+#allow_physical_file_deletion = "yes"
+playlist_separate_albums = "no"
+cyclic_scrolling = "yes"
+# not in git #fancy_scrolling = "yes"
+# not in git #display_screens_numbers_on_start = "no"
+regular_expressions = "extended"
+external_editor = "/usr/bin/vim"
+use_console_editor = "yes"
+ignore_leading_the = "yes"
+clock_display_seconds = "yes"
+display_bitrate = "yes"
+state_flags_color = "cyan"
+# not in git #state_window_color ="cyan"
+empty_tag_marker = "<empty>"
+jump_to_now_playing_song_at_start = "yes"
+enable_window_title = "no"
+display_remaining_time = "no"
+display_volume_level = "yes"
+user_interface = "classic"
+seek_time = "3"
+lines_scrolled="1"
+mouse_list_scroll_whole_page="no"
+mouse_support="yes"

@@ -1,0 +1,13 @@
+tasks:
+  main:
+    rss:
+      url: 
+      username: 
+      password: 
+    series:
+    transmission:
+      host: localhost
+      port: 9091
+      username: 
+      password:
+      addpaused: no
