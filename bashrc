@@ -16,6 +16,15 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
 ## by file extension and in column (-1X) and directories first
 alias ls='ls --color=always -h -1X --group-directories-first'
 
+## Trash
+alias del='trash-put'
+alias rm='echo "Dont use this"'
+
+## For colors in less
+alias less='less -R'
+alias dmesg='dmesg --color=always'
+alias pacman='pacman --color=always'
+
 alias short='PS1="~$ "'
 alias mupdf='mupdf -C 999999' ## Make mupdf background darker
 alias server="ssh server -t tmux a" ## ssh right into tmux session
@@ -25,12 +34,6 @@ alias myip='curl http://ifconfig.me/ip'
 alias please='sudo $(history -p \!\!)' ## run previous command as sudo
 alias spotify='firejail --noroot --private=~/Firefox/ spotify'
 alias mkdir='mkdir -pv'
-
-
-## For colors in less
-alias less='less -R'
-alias dmesg='dmesg --color=always'
-alias pacman='pacman --color=always'
 
 
 ## man colors
@@ -44,20 +47,19 @@ export LESS_TERMCAP_us=$'\E[01;32m'
 
 
 ## Shell options
-set -o noclobber
 shopt -s autocd
 shopt -s checkwinsize
 shopt -s cmdhist    ## Save multi line commands as one
 shopt -s histappend ## Append history dont overwrite
+set -o noclobber
+set echo-control-characters off ## Dont echo Ctrl-C
 
 
-## History completion: ls <up> will only get commands with ls
+## Binds
+bind '"\e[B":history-search-forward'    ## History completion
 bind '"\e[A":history-search-backward'
-bind '"\e[B":history-search-forward'
+bind '\\C-f:unix-filename-rubout'       ## Delete backwards to slash
 
-
-## Dont echo Ctrl-C
-set echo-control-characters off
 
 ## Search repos when command not found
 source /usr/share/doc/pkgfile/command-not-found.bash

@@ -59,4 +59,6 @@ Plug 'morhetz/gruvbox'
 "" Vim-Surround
 Plug 'tpope/vim-surround'
 
+Plug 'tpope/vim-fugitive'
+
 call plug#end()
