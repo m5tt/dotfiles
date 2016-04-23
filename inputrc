@@ -1,0 +1,10 @@
+$if mode=vi
+    set keymap vi-command
+    "k": history-search-backward
+    "j": history-search-forward
+$endif
+
+"C-f":  unix-filename-rubout ## Delete backwards to slash
+
+set keymap vi-insert
+"\C-l": clear-screen

@@ -5,10 +5,23 @@
 PS1='[\w] $ '
 
 ### Env variables
+
 export EDITOR="vim"
-export HISTCONTROL=ignoredups
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
 
+## History
+export HISTSIZE=     ## Unlimited
+export HISTFILESIZE=
+export HISTCONTROL=ignoredups:erasedups
+
+## man colors
+export LESS_TERMCAP_mb=$'\E[01;31m'
+export LESS_TERMCAP_md=$'\E[01;31m'
+export LESS_TERMCAP_me=$'\E[0m'
+export LESS_TERMCAP_se=$'\E[0m'
+export LESS_TERMCAP_so=$'\E[01;44;33m'
+export LESS_TERMCAP_ue=$'\E[0m'
+export LESS_TERMCAP_us=$'\E[01;32m'
 
 ## Aliases
 
@@ -36,29 +49,18 @@ alias spotify='firejail --noroot --private=~/Firefox/ spotify'
 alias mkdir='mkdir -pv'
 
 
-## man colors
-export LESS_TERMCAP_mb=$'\E[01;31m'
-export LESS_TERMCAP_md=$'\E[01;31m'
-export LESS_TERMCAP_me=$'\E[0m'
-export LESS_TERMCAP_se=$'\E[0m'
-export LESS_TERMCAP_so=$'\E[01;44;33m'
-export LESS_TERMCAP_ue=$'\E[0m'
-export LESS_TERMCAP_us=$'\E[01;32m'
-
-
 ## Shell options
 shopt -s autocd
 shopt -s checkwinsize
 shopt -s cmdhist    ## Save multi line commands as one
 shopt -s histappend ## Append history dont overwrite
+
 set -o noclobber
+set -o vi
 set echo-control-characters off ## Dont echo Ctrl-C
 
 
 ## Binds
-bind '"\e[B":history-search-forward'    ## History completion
-bind '"\e[A":history-search-backward'
-bind '\\C-f:unix-filename-rubout'       ## Delete backwards to slash
 
 
 ## Search repos when command not found
@@ -76,9 +78,15 @@ function enable()   { sudo systemctl enable $@;  }
 function disable()  { sudo systemctl disable $@; }
 
 
-## reminder()
-## Usage: reminder n mins/hours message
-reminder() {
-    echo "notify-send "$3"" | at now + $1 $2 &>/dev/null
+## Usage: reminder n min/hours message
+reminder()
+{
+    echo "espeak "$3" -a 700" | at now + $1 $2 &>/dev/null
     echo "Reminder: $3 set for $1 $2 from now."
+}
+
+## Usage: timer n
+timer()
+{
+    sleep $1 && espeak "Times up"
 }
