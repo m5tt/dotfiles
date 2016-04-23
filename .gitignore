@@ -1,5 +1,5 @@
 ncmpcpp/error.log
-vim/plugged
-vim/colors
-vim/.netrwhist
+nvim/plugged
+nvim/colors
+nvim/.netrwhist
 mpdcron/mpdcron.pid

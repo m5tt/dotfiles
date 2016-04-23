@@ -7,6 +7,7 @@ PS1='[\w] $ '
 ### Env variables
 
 export EDITOR="vim"
+export TERM="rxvt-256color"
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
 
 ## History
@@ -38,6 +39,9 @@ alias less='less -R'
 alias dmesg='dmesg --color=always'
 alias pacman='pacman --color=always'
 
+## Use neovim
+alias vim='nvim'
+
 alias short='PS1="~$ "'
 alias mupdf='mupdf -C 999999' ## Make mupdf background darker
 alias server="ssh server -t tmux a" ## ssh right into tmux session
@@ -58,9 +62,6 @@ shopt -s histappend ## Append history dont overwrite
 set -o noclobber
 set -o vi
 set echo-control-characters off ## Dont echo Ctrl-C
-
-
-## Binds
 
 
 ## Search repos when command not found

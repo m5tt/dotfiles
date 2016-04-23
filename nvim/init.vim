@@ -1,5 +1,4 @@
 "" Colorscheme
-set t_Co=256
 set background=dark
 let g:gruvbox_contrast_dark='hard'
 colorscheme gruvbox " Important to put this last
@@ -9,7 +8,6 @@ let mapleader = "\<Space>"
 
 "" General preferences
 syntax enable
-set clipboard=autoselect	   "let vim use the system clipboard
 set clipboard=unnamedplus
 set title                	   "set discriptive window title
 set number               	   "sets line numbers
@@ -19,6 +17,8 @@ set backspace=indent,eol,start "Allow backspace over autoindent, linebreaks and 
 set ttimeout				   "Timeout in between key presses
 set ttimeoutlen=50             "Length of timeout
 set autoread				   "Rereads file if detected it has changed elsewhere
+"set laststatus=1               "Fix neovim weird statusline
+set gdefault                   "g as default for search & replace
 
 ""Identing
 set autoindent     "keep indent
@@ -33,12 +33,11 @@ set ignorecase     "/foo will match FOO and FOo
 set smartcase      "/FOO only matches FOO
 set scrolloff=4    "keep 4 lines visible when scrolling
 
+"" Shortcuts
+nnoremap ; :
+
 "" Auto complete (Ctrl-N/Ctrl-P) settings
 set complete-=i,w,b,i
-
-"" Fix pasting from terminal
-set pastetoggle=<F2>
-set showmode
 
 "" Splits
 set splitright
@@ -56,12 +55,21 @@ nnoremap <silent> _ :exe "resize " . (winheight(0) - 5)<CR>
 nnoremap <silent> > :exe "vertical resize " . (winwidth(0) + 2)<CR>
 nnoremap <silent> < :exe "vertical resize " . (winwidth(0) - 2)<CR>
 
-
 "" Buffers
 map gn :bn<cr>
 map gp :bn<cr>
 map gc :bn<cr>
 set hidden      "" Switch buffers without saving
+
+"" Word processor mode
+func! WordProcessor()
+ setlocal textwidth=20
+ setlocal smartindent
+ setlocal spell spelllang=en_us
+ setlocal noexpandtab
+endfu
+
+com! WP call WordProcessor()
 
 "" CtrlP
 let g:ctrlp_map = '<c-p>'
@@ -96,6 +104,9 @@ Plug 'tpope/vim-fugitive'
 "" CtrlP
 Plug 'ctrlpvim/ctrlp.vim'
 
-Plug 'Valloric/YouCompleteMe'
+"" Neomake
+Plug 'benekastah/neomake'
+
+"Plug 'Valloric/YouCompleteMe'
 
 call plug#end()
