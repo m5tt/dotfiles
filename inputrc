@@ -2,6 +2,7 @@ $if mode=vi
     set keymap vi-command
     "k": history-search-backward
     "j": history-search-forward
+    ".": insert-last-argument
 $endif
 
 "C-f":  unix-filename-rubout ## Delete backwards to slash

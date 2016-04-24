@@ -15,6 +15,7 @@ set autoread				   "Rereads file if detected it has changed elsewhere
 set gdefault                   "g as default for search & replace
 set encoding=utf-8       	   "sets encoding to UTF-8
 set ttimeoutlen=50             "Length of timeout
+set complete-=i,w,b,i           "" Auto complete (Ctrl-N/Ctrl-P) settings
 set clipboard=unnamedplus
 set backspace=indent,eol,start "Allow backspace over autoindent, linebreaks and start of indent
 
@@ -41,11 +42,10 @@ filetype off
 set noshowmode
 nnoremap J mzJ`z
 
+
 "" Shortcuts
 nnoremap ; :
 
-"" Auto complete (Ctrl-N/Ctrl-P) settings
-set complete-=i,w,b,i
 
 "" Splits
 set splitright
@@ -62,6 +62,7 @@ nnoremap <silent> + :exe "resize " . (winheight(0) + 5)<CR>
 nnoremap <silent> _ :exe "resize " . (winheight(0) - 5)<CR>
 nnoremap <silent> > :exe "vertical resize " . (winwidth(0) + 2)<CR>
 nnoremap <silent> < :exe "vertical resize " . (winwidth(0) - 2)<CR>
+
 
 "" Buffers
 map gn :bn<cr>
@@ -98,6 +99,8 @@ let g:ctrlp_custom_ignore = {
 
 "" Airline
 let g:airline_powerline_fonts = 1
+let g:airline_section_y=""
+let g:airline_section_z=""
 
 
 "" Plugins with Vim-Plug
