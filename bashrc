@@ -6,7 +6,7 @@ PS1='[\w] $ '
 
 ### Env variables
 
-export EDITOR="vim"
+export EDITOR="nvim"
 export TERM="rxvt-256color"
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
 
@@ -26,7 +26,7 @@ export LESS_TERMCAP_us=$'\E[01;32m'
 
 ## Aliases
 
-## Make ls use color, human readable file size, sort 
+## Make ls use color, human readable file size, sort
 ## by file extension and in column (-1X) and directories first
 alias ls='ls --color=always -h -1X --group-directories-first'
 
@@ -82,7 +82,7 @@ function disable()  { sudo systemctl disable $@; }
 ## Usage: reminder n min/hours message
 reminder()
 {
-    echo "espeak "$3" -a 700" | at now + $1 $2 &>/dev/null
+    echo "notify-send "$3"" | at now + $1 $2 &>/dev/null
     echo "Reminder: $3 set for $1 $2 from now."
 }
 

@@ -8,17 +8,16 @@ let mapleader = "\<Space>"
 
 "" General preferences
 syntax enable
-set clipboard=unnamedplus
-set title                	   "set discriptive window title
 set number               	   "sets line numbers
-set encoding=utf-8       	   "sets encoding to UTF-8
 set nowrap               	   "no line wrapping
-set backspace=indent,eol,start "Allow backspace over autoindent, linebreaks and start of indent
 set ttimeout				   "Timeout in between key presses
-set ttimeoutlen=50             "Length of timeout
 set autoread				   "Rereads file if detected it has changed elsewhere
-"set laststatus=1               "Fix neovim weird statusline
 set gdefault                   "g as default for search & replace
+set encoding=utf-8       	   "sets encoding to UTF-8
+set ttimeoutlen=50             "Length of timeout
+set clipboard=unnamedplus
+set backspace=indent,eol,start "Allow backspace over autoindent, linebreaks and start of indent
+
 
 ""Identing
 set autoindent     "keep indent
@@ -27,11 +26,20 @@ set shiftwidth=4   "distance for smartindent
 set tabstop=4      "number of spaces for tab
 set expandtab      "converts tabs to spaces
 
+
 "" Search settings
 set incsearch      "Incremental search - matches terms as you type
 set ignorecase     "/foo will match FOO and FOo
 set smartcase      "/FOO only matches FOO
 set scrolloff=4    "keep 4 lines visible when scrolling
+
+
+"" Little things
+map q: :q
+set mouse=a
+filetype off
+set noshowmode
+nnoremap J mzJ`z
 
 "" Shortcuts
 nnoremap ; :
@@ -61,6 +69,7 @@ map gp :bn<cr>
 map gc :bn<cr>
 set hidden      "" Switch buffers without saving
 
+
 "" Word processor mode
 func! WordProcessor()
  setlocal textwidth=20
@@ -70,6 +79,7 @@ func! WordProcessor()
 endfu
 
 com! WP call WordProcessor()
+
 
 "" CtrlP
 let g:ctrlp_map = '<c-p>'
@@ -86,8 +96,9 @@ let g:ctrlp_custom_ignore = {
 \}
 
 
-"" Unfourtunately neccesary
-map q: :q
+"" Airline
+let g:airline_powerline_fonts = 1
+
 
 "" Plugins with Vim-Plug
 call plug#begin('~/.vim/plugged')
@@ -105,8 +116,12 @@ Plug 'tpope/vim-fugitive'
 Plug 'ctrlpvim/ctrlp.vim'
 
 "" Neomake
-Plug 'benekastah/neomake'
+"Plug 'benekastah/neomake'
 
 "Plug 'Valloric/YouCompleteMe'
+
+"" Airline
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 call plug#end()

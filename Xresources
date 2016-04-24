@@ -5,21 +5,21 @@ Xft*antialias: true
 Xft*rgba:      rgb
 Xft*hinting:   true
 Xft*hintstyle: Full
-  
+
 URxvt*depth: 32
-URxvt*geometry: 90x30 
+URxvt*geometry: 90x30
 URxvt*transparent: false
 URxvt*fading: 5
 URxvt*urgentOnBell: false
 URxvt*loginShell: no
 URxvt*internalBorder: 4
 URxvt*lineSpace: 1
-   
+
 ! Fonts
 URxvt*allow_bold:true
-URxvt*font: xft:Inconsolata:pixelsize=18
+URxvt*font: xft:Inconsolata\ for\ Powerline:pixelsize=18
 URxvt*boldFont: xft:Inconsolata:pixelsize=18
-    
+
 ! Fix font space
 ! -1 if not using patch
 URxvt*letterSpace: 1
@@ -32,17 +32,17 @@ URxvt*saveLines: 65535
 ! Scrollbar
 URxvt*scrollStyle: rxvt
 URxvt*scrollBar: false
-      
+
 ! Perl extensions - disabled
 ! TODO: Add perl plugins
 URxvt*perl-ext:
-URxvt*perl-ext-common: 
+URxvt*perl-ext-common:
 
 ! Cursor
 URxvt*cursorBlink: false
 URxvt*cursorColor: #657b83
 URxvt*cursorUnderline: false
-        
+
 ! Pointer
 URxvt*pointerBlank: true
 
