@@ -12,17 +12,17 @@ chomp $dotfiles_dir;
 $dotfiles_dir .= '/';
 
 my $old_dotfiles_dir = $home_dir . '.old_dotfiles/';
-my @ignore_files = ('install.pl', '.', '..', @ARGV);
+my @ignore_files = ('install.pl', '.', '..', '.gitignore', '.git', @ARGV);
 
 ## Open current dir (dotfiles) and put all the dotfiles in @dotfiles
-opendir(my $dir_fh, '.') or die $!;
+opendir(my $dir_fh, $dotfiles_dir) or die $!;
 my @dotfiles = readdir($dir_fh);
 closedir($dir_fh);
 
 print "Creating $old_dotfiles_dir\n";
 mkdir $old_dotfiles_dir;
 
-## Skip any files in @ignore_files, move any old dotfiles then creat symlinks to dotfiles in $dotfiles_dir
+## Skip any files in @ignore_files, move any old dotfiles then create symlinks to dotfiles in $dotfiles_dir
 for my $current_dotfile (@dotfiles)
 {
     next if $current_dotfile ~~ @ignore_files;

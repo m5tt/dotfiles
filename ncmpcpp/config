@@ -1,10 +1,10 @@
 ncmpcpp_directory = "/home/matt/.ncmpcpp"
 
 ## MPD
-mpd_host = "localhost"
-mpd_port = "6600"
-mpd_music_dir = "/home/matt/Music/"
-mpd_crossfade_time = "5"
+#mpd_host = "localhost"
+#mpd_port = "6600"
+#mpd_music_dir = "/home/matt/Music/"
+#mpd_crossfade_time = "5"
 
 # Bars
 statusbar_visibility = "yes"

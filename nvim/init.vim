@@ -73,7 +73,7 @@ set hidden      "" Switch buffers without saving
 
 "" Word processor mode
 func! WordProcessor()
- setlocal textwidth=20
+ setlocal textwidth=80
  setlocal smartindent
  setlocal spell spelllang=en_us
  setlocal noexpandtab
@@ -99,12 +99,15 @@ let g:ctrlp_custom_ignore = {
 
 "" Airline
 let g:airline_powerline_fonts = 1
-let g:airline_section_y=""
-let g:airline_section_z=""
+let g:airline_section_y=''
+let g:airline_section_z=''
+let g:airline_left_sep=''
+let g:airline_detect_spell=0
+let g:airline#extensions#whitespace#checks = []
 
 
 "" Plugins with Vim-Plug
-call plug#begin('~/.vim/plugged')
+call plug#begin()
 
 "" Gruvbox
 Plug 'morhetz/gruvbox'
