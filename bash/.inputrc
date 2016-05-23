@@ -8,4 +8,5 @@ $endif
 "C-f":  unix-filename-rubout ## Delete backwards to slash
 
 set keymap vi-insert
+
 "\C-l": clear-screen

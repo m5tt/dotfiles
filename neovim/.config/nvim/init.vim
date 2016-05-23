@@ -7,15 +7,15 @@ colorscheme gruvbox " Important to put this last
 let mapleader = "\<Space>"
 
 "" General preferences
-syntax enable
+syntax on
 set number               	   "sets line numbers
 set nowrap               	   "no line wrapping
 set ttimeout				   "Timeout in between key presses
 set autoread				   "Rereads file if detected it has changed elsewhere
 set gdefault                   "g as default for search & replace
-set encoding=utf-8       	   "sets encoding to UTF-8
+"set encoding=utf-8       	   "sets encoding to UTF-8
 set ttimeoutlen=50             "Length of timeout
-set complete-=i,w,b,i           "" Auto complete (Ctrl-N/Ctrl-P) settings
+set complete-=i,w,b,i          "Auto complete (Ctrl-N/Ctrl-P) settings
 set clipboard=unnamedplus
 set backspace=indent,eol,start "Allow backspace over autoindent, linebreaks and start of indent
 
@@ -40,14 +40,18 @@ map q: :q
 set mouse=a
 filetype off
 set noshowmode
-nnoremap J mzJ`z
 
 
-"" Shortcuts
+"" Mappings
 nnoremap ; :
+nnoremap J mzJ`z
+nnoremap Q <nop>
+noremap gV `[v`]
+nnoremap <silent> <Leader>/ :nohlsearch<CR>
 
 
 "" Splits
+
 set splitright
 set splitbelow
 
@@ -64,12 +68,15 @@ nnoremap <silent> > :exe "vertical resize " . (winwidth(0) + 2)<CR>
 nnoremap <silent> < :exe "vertical resize " . (winwidth(0) - 2)<CR>
 
 
+
 "" Buffers
 map gn :bn<cr>
 map gp :bn<cr>
 map gc :bn<cr>
 set hidden      "" Switch buffers without saving
 
+
+"" Functions
 
 "" Word processor mode
 func! WordProcessor()
@@ -81,6 +88,8 @@ endfu
 
 com! WP call WordProcessor()
 
+
+"" Plugin config
 
 "" CtrlP
 let g:ctrlp_map = '<c-p>'
@@ -96,7 +105,6 @@ let g:ctrlp_custom_ignore = {
   \ 'file': '\v\.(exe|so|dll|class|png|jpg|jpeg|pdf)$',
 \}
 
-
 "" Airline
 let g:airline_powerline_fonts = 1
 let g:airline_section_y=''
@@ -106,11 +114,11 @@ let g:airline_detect_spell=0
 let g:airline#extensions#whitespace#checks = []
 
 
-"" Plugins with Vim-Plug
-call plug#begin()
+"" Plugins 
+call plug#begin('~/Documents/dotfiles/neovim/.config/nvim/plugged')
 
 "" Gruvbox
-Plug 'morhetz/gruvbox'
+Plug 'https://github.com/morhetz/gruvbox.git'
 
 "" Vim-Surround
 Plug 'tpope/vim-surround'
@@ -120,11 +128,6 @@ Plug 'tpope/vim-fugitive'
 
 "" CtrlP
 Plug 'ctrlpvim/ctrlp.vim'
-
-"" Neomake
-"Plug 'benekastah/neomake'
-
-"Plug 'Valloric/YouCompleteMe'
 
 "" Airline
 Plug 'vim-airline/vim-airline'

@@ -1,5 +1,6 @@
-ncmpcpp/error.log
-nvim/plugged
-nvim/colors
-nvim/.netrwhist
-mpdcron/mpdcron.pid
+ncmpcpp/.config/ncmcpp/error.log
+neovim/.config/nvim/plugged
+neovim/.config/nvim/colors
+neovim/.config/nvim/.netrwhist
+mpdcron/.config/mpdcron/mpdcron.pid
+.stowrc

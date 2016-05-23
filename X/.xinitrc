@@ -13,7 +13,7 @@ fi
 
 #export LC_ALL=en_US-UTF-8
 
-xrdb -merge ~/.Xresources
+xrdb -merge ~/.config/Xresources
 
 setxkbmap -option caps:escape	 ## bind caps lock as escape
 xscreensaver -no-splash &        ## set screensaver daemon
