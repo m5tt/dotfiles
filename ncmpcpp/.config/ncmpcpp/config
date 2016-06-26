@@ -1,9 +1,9 @@
-ncmpcpp_directory = "/home/matt/.ncmpcpp"
+ncmpcpp_directory = "/home/matt/.config/ncmpcpp"
 
 ## MPD
 #mpd_host = "localhost"
 #mpd_port = "6600"
-#mpd_music_dir = "/home/matt/Music/"
+mpd_music_dir = "/home/matt/Media/Music/"
 #mpd_crossfade_time = "5"
 
 # Bars

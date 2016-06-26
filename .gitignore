@@ -1,6 +1,11 @@
-ncmpcpp/.config/ncmcpp/error.log
 neovim/.config/nvim/plugged
 neovim/.config/nvim/colors
 neovim/.config/nvim/.netrwhist
 mpdcron/.config/mpdcron/mpdcron.pid
+mpd/.config/mpd/mpd.log
+mpd/.config/mpd/pid
+mpd/.config/mpd/state
+mpd/.config/mpd/sticker.sql
+mpd/.config/mpd/tag_cache
+ncmpcpp/.config/ncmpcpp/error.log
 .stowrc

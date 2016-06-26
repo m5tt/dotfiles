@@ -13,7 +13,6 @@ set nowrap               	   "no line wrapping
 set ttimeout				   "Timeout in between key presses
 set autoread				   "Rereads file if detected it has changed elsewhere
 set gdefault                   "g as default for search & replace
-"set encoding=utf-8       	   "sets encoding to UTF-8
 set ttimeoutlen=50             "Length of timeout
 set complete-=i,w,b,i          "Auto complete (Ctrl-N/Ctrl-P) settings
 set clipboard=unnamedplus
@@ -39,7 +38,7 @@ set scrolloff=4    "keep 4 lines visible when scrolling
 map q: :q
 set mouse=a
 filetype off
-set noshowmode
+"set noshowmode
 
 
 "" Mappings

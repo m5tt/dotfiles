@@ -1,55 +1,69 @@
 URxvt.termName: rxvt
 
-Xft*dpi:       96
-Xft*antialias: true
-Xft*rgba:      rgb
-Xft*hinting:   true
-Xft*hintstyle: Full
+Xft.dpi:       96
+Xft.antialias: true
+Xft.rgba:      rgb
+Xft.hinting:   true
+Xft.hintstyle: Full
 
-URxvt*depth: 32
-URxvt*geometry: 90x30
-URxvt*transparent: false
-URxvt*fading: 5
-URxvt*urgentOnBell: false
-URxvt*loginShell: no
-URxvt*internalBorder: 4
-URxvt*lineSpace: 1
+URxvt.depth: 32
+URxvt.geometry: 90x30
+URxvt.transparent: false
+URxvt.fading: 5
+URxvt.urgentOnBell: false
+URxvt.loginShell: no
+URxvt.internalBorder: 4
+URxvt.lineSpace: 1
 
 ! Fonts
-URxvt*allow_bold:true
-URxvt*font: xft:Inconsolata\ for\ Powerline:pixelsize=18
-URxvt*boldFont: xft:Inconsolata:pixelsize=18
+URxvt.allow_bold:true
+URxvt.font: xft:Inconsolata\ for\ Powerline:pixelsize=18
+URxvt.boldFont: xft:Inconsolata:pixelsize=18
 
 ! Fix font space
 ! -1 if not using patch
-URxvt*letterSpace: 1
+URxvt.letterSpace: 1
 
 ! Scrollback buffer size
-URxvt*scrollWithBuffer: true
-URxvt*buffered: true
-URxvt*saveLines: 65535
+URxvt.scrollWithBuffer: true
+URxvt.buffered: true
+URxvt.saveLines: 65535
 
 ! Scrollbar
-URxvt*scrollStyle: rxvt
-URxvt*scrollBar: false
+URxvt.scrollStyle: rxvt
+URxvt.scrollBar: false
 
 ! Perl extensions - disabled
 ! TODO: Add perl plugins
-URxvt*perl-ext:
-URxvt*perl-ext-common:
+URxvt.perl-ext:
+URxvt.perl-ext-common:
 
 ! Cursor
-URxvt*cursorBlink: false
-URxvt*cursorColor: #657b83
-URxvt*cursorUnderline: false
+URxvt.cursorBlink: false
+URxvt.cursorColor: #657b83
+URxvt.cursorUnderline: false
 
 ! Pointer
-URxvt*pointerBlank: true
+URxvt.pointerBlank: true
 
 ! Colors mess up without this
-URxvt*intensityStyles: false
+URxvt.intensityStyles: false
+
+
+! ------------------------------------------------------------------------------
+! ROFI color scheme
+! ------------------------------------------------------------------------------
+
+rofi.color-enabled: true
+rofi.color-window: #393939, #393939, #268bd2
+rofi.color-normal: #393939, #ffffff, #393939, #268bd2, #ffffff
+rofi.color-active: #393939, #268bd2, #393939, #268bd2, #205171
+rofi.color-urgent: #393939, #f3843d, #393939, #268bd2, #ffc39c
+rofi.opacity: 70
+
 
 ! -----------------------------------------------------------------------------
+! Terminal color scheme
 ! File: gruvbox-dark.xresources
 ! Description: Retro groove colorscheme generalized
 ! Author: morhetz <morhetz@gmail.com>
