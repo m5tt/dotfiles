@@ -17,19 +17,6 @@ interval=once
 signal=14
 
 
-[weather-icon]
-full_text=
-separator=false
-separator_block_width=7
-color=#68A6D9
-interval=once
-
-[weather]
-full_text=Checking
-command=weather
-interval=1300
-
-
 [updates]
 full_text=Checking
 label=pacman
@@ -37,18 +24,9 @@ command=~/Documents/i3blocks-scripts/check-updates
 color=#AEB4B5
 interval=14400
 
-
-[disk-home-icon]
-full_text=
-separator=false
-separator_block_width=7
-color=#68A6D9
-interval=once
-
 [disk-home]
 command=~/Documents/i3blocks-scripts/disk home
 interval=14400
-
 
 [wireless-icon]
 full_text=
@@ -69,9 +47,8 @@ command=~/Documents/i3blocks-scripts/network
 color=#00FF00
 interval=1800
 
-
 [volume-icon]
-full_text=
+full_text=
 separator=false
 separator_block_width=7
 color=#68A6D9
@@ -81,7 +58,6 @@ interval=once
 command=~/Documents/i3blocks-scripts/volume
 interval=once
 signal=10
-
 
 [battery-icon]
 command=~/Documents/i3blocks-scripts/battery-icon
@@ -93,7 +69,6 @@ interval=180
 [battery]
 command=~/Documents/i3blocks-scripts/battery
 interval=180
-
 
 [time]
 command=date '+%a %b %d %Y %l:%M %p'

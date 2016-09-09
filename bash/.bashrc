@@ -24,11 +24,10 @@ export LESS_TERMCAP_so=$'\E[01;44;33m'
 export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[01;32m'
 
-
 ## Aliases
 
 ## Make ls use color, human readable file size, sort
-## by file extension and in column (-1X) and directories first
+## by file extension, print files in column (-1X) and sort directories first
 alias ls='ls --color=always -h -1X --group-directories-first'
 
 ## For sudo aliases
@@ -38,6 +37,7 @@ alias sudo='sudo '
 alias del='trash-put'
 alias rm='echo "Dont use this"'
 
+
 ## For colors in less
 alias less='less -R'
 alias dmesg='dmesg --color=always'
@@ -46,9 +46,9 @@ alias pacman='pacman --color=always'
 ## Use neovim
 alias vim='nvim'
 
-alias mv='mv -n'
-alias short='PS1="~$ "'
-alias mkdir='mkdir -pv'
+alias mv='mv -i'                        ## Prompt before overwrite
+alias short='PS1="~$ "'                 ## When file path is super long
+alias mkdir='mkdir -pv'                 ## Make parent dir if needed and verbose
 alias mupdf='mupdf -C 999999'           ## Make mupdf background darker
 alias server="ssh server -t tmux a"     ## ssh right into tmux session
 alias please='sudo $(history -p \!\!)'  ## run previous command as sudo
@@ -64,7 +64,7 @@ shopt -s cmdhist        ## Save multi line commands as one
 shopt -s histappend     ## Append history dont overwrite
 
 set -o noclobber
-set -o vi
+set -o vi                       ## vi mode in shell instead of emacs
 set echo-control-characters off ## Dont echo Ctrl-C
 
 
