@@ -1,3 +1,5 @@
+$include /etc/inputrc
+
 $if mode=vi
     set keymap vi-command
     "k": history-search-backward
@@ -10,3 +12,5 @@ $endif
 set keymap vi-insert
 
 "\C-l": clear-screen
+
+set mark-symlinked-directories on ## For bash-complete to append trailing slash on symlink dirs

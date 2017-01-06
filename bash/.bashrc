@@ -46,6 +46,8 @@ alias pacman='pacman --color=always'
 ## Use neovim
 alias vim='nvim'
 
+alias poweroff='poweroff-check 0'
+alias reboot='poweroff-check 1'
 alias mv='mv -i'                        ## Prompt before overwrite
 alias short='PS1="~$ "'                 ## When file path is super long
 alias mkdir='mkdir -pv'                 ## Make parent dir if needed and verbose
@@ -62,6 +64,7 @@ shopt -s autocd
 shopt -s checkwinsize
 shopt -s cmdhist        ## Save multi line commands as one
 shopt -s histappend     ## Append history dont overwrite
+shopt -s extglob        ## extended globbing features
 
 set -o noclobber
 set -o vi                       ## vi mode in shell instead of emacs
@@ -81,7 +84,6 @@ function restart()  { sudo systemctl restart $@; }
 function status()   { sudo systemctl status $@;  }
 function enable()   { sudo systemctl enable $@;  }
 function disable()  { sudo systemctl disable $@; }
-
 
 ## Usage: reminder n min/hours message
 reminder()
