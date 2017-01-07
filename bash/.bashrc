@@ -72,7 +72,7 @@ set echo-control-characters off ## Dont echo Ctrl-C
 
 
 ## Search repos when command not found
-source /usr/share/doc/pkgfile/command-not-found.bash
+#source /usr/share/doc/pkgfile/command-not-found.bash
 
 
 ## Functions
@@ -88,7 +88,7 @@ function disable()  { sudo systemctl disable $@; }
 ## Usage: reminder n min/hours message
 reminder()
 {
-    echo "notify-send "$3"" | at now + $1 $2 &>/dev/null
+    echo "notify-send 'Reminder' "$3"" | at now + $1 $2 &>/dev/null
     echo "Reminder: $3 set for $1 $2 from now."
 }
 
