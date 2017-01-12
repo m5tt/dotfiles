@@ -48,7 +48,7 @@ set tags=.tags
 "" misc
 map q: :q
 filetype off
-set iskeyword-=_      " consider _ to be a word break
+"set iskeyword-=_      " consider _ to be a word break
 
 
 "" Mappings

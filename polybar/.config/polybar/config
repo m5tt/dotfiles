@@ -43,7 +43,7 @@ font-1 = inconsolata:size=6:heavy:fontformat=truetype;-2
 font-2 = FontAwesome:pixelsize=14;0
 
 modules-left = i3 
-modules-right = mpd backlight temperature filesystem wlan eth volume  battery date 
+modules-right = mpd weather updates backlight temperature filesystem wlan eth volume  battery date 
 
 tray-padding = 2
 tray-position = right
@@ -80,7 +80,7 @@ font-1 = inconsolata:size=6:heavy:fontformat=truetype;-2
 font-2 = FontAwesome:pixelsize=14;0
 
 modules-left = i3 
-modules-right = mpd backlight temperature filesystem wlan eth volume  battery date 
+modules-right = mpd weather updates  backlight temperature filesystem wlan eth volume  battery date 
 
 tray-padding = 2
 tray-position = right
@@ -156,6 +156,20 @@ ramp-0 = 
 ramp-1 = 
 ramp-2 = 
 ramp-foreground = ${colors.foreground-alt}
+
+
+[module/weather]
+type = custom/script
+exec = weather
+tail = false
+interval = 14400
+
+
+[module/updates]
+type = custom/script
+exec = check-updates
+tail = false
+interval = 14400
 
 
 [module/backlight]
