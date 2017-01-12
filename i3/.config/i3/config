@@ -165,8 +165,13 @@ new_float  1pixel
 ## Toggle border style (window-title - 1px - nothing)
 bindsym $mod+o border toggle
 
-## Screenshot key
-bindsym Print exec maim -i $(xdotool getactivewindow)
+## Screenshots
+
+# just take screenshot
+bindsym Print exec maim -i $(xdotool getactivewindow) ~/Media/Images/Screenshots/$(date +%F-%T).png
+
+# take screenshot and upload
+bindsym Shift+Print exec upload-screenshot 
 
 ## Open up a small floating terminal for quick commands
 for_window [instance="__special__"] floating enable

@@ -45,10 +45,11 @@ set scrolloff=4    "keep 4 lines visible when scrolling
 "" Tags
 set tags=.tags
 
-
-"" Little things
+"" misc
 map q: :q
 filetype off
+set iskeyword-=_      " consider _ to be a word break
+
 
 "" Mappings
 nnoremap ; :

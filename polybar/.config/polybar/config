@@ -13,8 +13,8 @@ margin-top = 5
 margin-bottom = 5
 
 
-[bar/bar]
-;monitor = ${env:MONITOR:HDMI-1}
+[bar/bar1]
+monitor = eDP1
 width = 100%
 height = 28
 offset-x = 0
@@ -49,6 +49,44 @@ tray-padding = 2
 tray-position = right
 
 wm-restack = i3
+
+[bar/bar2]
+monitor = DP1
+width = 100%
+height = 28
+offset-x = 0
+offset-y = 0
+bottom=true
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+overline-size = 2
+overline-color = #f00
+underline-size = 2
+underline-color = #00f
+
+border-bottom = 2
+border-bottom-color = #333
+
+spacing = 1
+padding-left = 0
+padding-right = 2
+module-margin-left = 1
+module-margin-right = 2
+
+font-0 = Inconsolata:pixelsize=14;0
+font-1 = inconsolata:size=6:heavy:fontformat=truetype;-2
+font-2 = FontAwesome:pixelsize=14;0
+
+modules-left = i3 
+modules-right = mpd backlight temperature filesystem wlan eth volume  battery date 
+
+tray-padding = 2
+tray-position = right
+
+wm-restack = i3
+
 
 
 [module/i3]
@@ -144,24 +182,6 @@ label-unmounted = %mountpoint%: not mounted
 label-unmounted-foreground = ${colors.foreground-alt}
 
 
-
-[module/volume]
-type = internal/volume
-
-format-volume = <ramp-volume> <label-volume>
-label-volume = %percentage%
-
-ramp-volume-0 = 
-ramp-volume-1 = 
-ramp-volume-2 = 
-
-label-volume-foreground = ${root.foreground}
-
-format-muted-prefix = " "
-format-muted-foreground = ${colors.foreground-alt}
-label-muted = sound muted
-
-
 [module/wlan]
 type = internal/network
 interface = wlp3s0
@@ -180,7 +200,6 @@ ramp-signal-3 = 
 ramp-signal-4 = 
 ramp-signal-foreground = ${colors.foreground-alt}
 
-
 [module/eth]
 type = internal/network
 interface = tun0
@@ -194,6 +213,22 @@ label-connected = %local_ip%
 format-disconnected-underline = ${self.format-connected-underline}
 label-disconnected = %ifname% disconnected
 label-disconnected-foreground = ${colors.foreground-alt}
+
+[module/volume]
+type = internal/volume
+
+format-volume = <ramp-volume> <label-volume>
+label-volume = %percentage%
+
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
+
+label-volume-foreground = ${root.foreground}
+
+format-muted-prefix = " "
+format-muted-foreground = ${colors.foreground-alt}
+label-muted = sound muted
 
 
 [module/battery]
