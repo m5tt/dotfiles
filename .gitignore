@@ -10,3 +10,5 @@ mpd/.config/mpd/tag_cache
 mpd/.config/mpd/playlists
 ncmpcpp/.config/ncmpcpp/error.log
 .stowrc
+vdirsyncer/.config/vdirsyncer/status/*
+khal/.config/khal/khal.db
