@@ -85,8 +85,6 @@ nnoremap <silent> _ :exe "resize " . (winheight(0) - 5)<CR>
 nnoremap <silent> > :exe "vertical resize " . (winwidth(0) + 2)<CR>
 nnoremap <silent> < :exe "vertical resize " . (winwidth(0) - 2)<CR>
 
-
-
 "" Buffers
 map gn :bn<cr>
 map gp :bp<cr>
@@ -148,7 +146,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 
 "" CtrlP
-Plug 'ctrlpvim/ctrlp.vim'
+""Plug 'ctrlpvim/ctrlp.vim'
 
 "" Airline
 Plug 'vim-airline/vim-airline'
@@ -157,10 +155,14 @@ Plug 'vim-airline/vim-airline-themes'
 "" Vim Simple Complete
 Plug 'maxboisvert/vim-simple-complete'
 
+Plug 'lervag/vimtex'
+
+Plug 'sheerun/vim-polyglot'
+
 "" Vim Autotags
-Plug 'craigemery/vim-autotag'
+""Plug 'craigemery/vim-autotag'
 
 "" Vim TagBar
-Plug 'vim-scripts/Tagbar'
+""Plug 'vim-scripts/Tagbar'
 
 call plug#end()

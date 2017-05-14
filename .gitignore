@@ -1,5 +1,5 @@
 neovim/.config/nvim/plugged
-neovim/.config/nvim/colors
+neovim/.config/nvim/undo
 neovim/.config/nvim/.netrwhist
 mpdcron/.mpdcron/mpdcron.pid
 mpd/.config/mpd/mpd.log
