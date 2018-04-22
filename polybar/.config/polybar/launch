@@ -9,3 +9,4 @@ while pgrep -x polybar >/dev/null; do sleep 1; done
 # launch
 polybar bar1 &
 polybar bar2 &
+polybar bar3 &

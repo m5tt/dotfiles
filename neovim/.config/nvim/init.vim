@@ -40,7 +40,11 @@ set smartcase      "/FOO only matches FOO
 set scrolloff=4    "keep 4 lines visible when scrolling
 
 "" Filetype specific settings
-""autocmd FileType html setlocal shiftwidth=2 tabstop=2
+autocmd Filetype html setlocal ts=2 sts=2 sw=2
+autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
+autocmd Filetype erb setlocal ts=2 sts=2 sw=2
+
+
 
 "" Tags
 set tags=.tags
@@ -49,6 +53,12 @@ set tags=.tags
 map q: :q
 filetype off
 "set iskeyword-=_      " consider _ to be a word break
+
+"" Go back to line number you were on
+if has("autocmd")
+    au BufReadPost * if line("\'\"") > 0 && line("'\"") <= line("$")
+                \| exe "normal! g'\"" | endif
+endif
 
 
 "" Mappings
@@ -159,10 +169,13 @@ Plug 'lervag/vimtex'
 
 Plug 'sheerun/vim-polyglot'
 
+Plug 'tpope/vim-ragtag'
+
 "" Vim Autotags
 ""Plug 'craigemery/vim-autotag'
 
 "" Vim TagBar
 ""Plug 'vim-scripts/Tagbar'
+
 
 call plug#end()

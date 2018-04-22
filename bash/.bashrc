@@ -6,6 +6,15 @@ PS1='[\w] $ '
 
 ### Env variables
 
+# ruby
+PATH=$PATH:~/.gem/ruby/2.4.0/bin
+PATH=$PATH:~/.gem/ruby/2.5.0/bin
+PATH=$PATH:~/.local/bin
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+
+
+export PATH
+
 export EDITOR="nvim"
 export TERM="rxvt-256color"
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
@@ -15,7 +24,7 @@ export HISTSIZE=     ## Unlimited
 export HISTFILESIZE=
 export HISTCONTROL=ignoredups:erasedups
 
-## man colors
+## Man colors
 export LESS_TERMCAP_mb=$'\E[01;31m'
 export LESS_TERMCAP_md=$'\E[01;31m'
 export LESS_TERMCAP_me=$'\E[0m'
@@ -28,7 +37,8 @@ export LESS_TERMCAP_us=$'\E[01;32m'
 
 ## Make ls use color, human readable file size, sort
 ## by file extension, print files in column (-1X) and sort directories first
-alias ls='ls --color=always -h -1X --group-directories-first'
+## counting symlinks to directories as directores (-L)
+alias ls='ls --color=always -h -1X -L --group-directories-first'
 
 ## For sudo aliases
 alias sudo='sudo '
@@ -57,7 +67,9 @@ alias please='sudo $(history -p \!\!)'  ## run previous command as sudo
 alias myip='curl http://ifconfig.me/ip'
 alias spotify='firejail --noroot --private=~/Firefox/ spotify'
 alias trc="transmission-remote-cli -f $HOME/.transmission-remote-cli"
+alias py='python'
 
+alias update='yes | sudo pacman -Syyuu && pacaur -u'
 
 ## Shell options
 shopt -s autocd
@@ -74,15 +86,18 @@ set echo-control-characters off ## Dont echo Ctrl-C
 ## Search repos when command not found
 #source /usr/share/doc/pkgfile/command-not-found.bash
 
+## Autojump
+source /etc/profile.d/autojump.bash
+
 
 ## Functions
 
 ## systemctl shortcuts
-function start()    { sudo systemctl start $@;   }
-function stop()     { sudo systemctl stop $@;    }
+function start()    { sudo systemctl start $@; }
+function stop()     { sudo systemctl stop $@; }
 function restart()  { sudo systemctl restart $@; }
-function status()   { sudo systemctl status $@;  }
-function enable()   { sudo systemctl enable $@;  }
+function status()   { systemctl status $@; }
+function enable()   { sudo systemctl enable $@; }
 function disable()  { sudo systemctl disable $@; }
 
 ## Usage: reminder n min/hours message
@@ -95,10 +110,11 @@ reminder()
 ## Usage: timer n
 timer()
 {
-    sleep $1 && espeak "Times up"
+    sleep $1 && notify-send "Timer" "Times up"
 }
 
 ## Word of the day
+## TODO do this without w3m
 wod()
 {
     w3m www.dictionary.com/wordoftheday | cat | grep -e "Word of the Day" -x -A99 | grep -e "new every day" -x -B 99 > /tmp/wod.txt
@@ -108,3 +124,12 @@ wod()
     echo ==========================================================
 
 }
+
+
+
+
+export ANDROID_SDK_ROOT=~/Documents/Code/Android
+export ANDROID_AVD_HOME=~/.android/avd
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"

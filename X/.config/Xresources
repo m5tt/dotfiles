@@ -3,8 +3,10 @@ URxvt.termName: rxvt
 Xft.dpi:       96
 Xft.antialias: true
 Xft.rgba:      rgb
+Xft.lcdfilter: lcddefault
 Xft.hinting:   true
 Xft.hintstyle: Full
+Xft.autohint: 0
 
 URxvt.depth: 32
 URxvt.geometry: 90x30

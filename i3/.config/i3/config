@@ -127,10 +127,11 @@ bindsym $mod+r mode "resize"
 ## Lock screen with i3lock
 bindsym $mod+c exec i3lock -c 000000
 
+
 ## Firefox with in jail using firejail
 ## Use UTC as timezone
-bindsym $mod+b exec TZ=UTC firejail --noroot --private=~/Firefox firefox -P default
-bindsym $mod+Shift+b exec TZ=UTC firejail --noroot --private=~/Firefox firefox -P Other
+bindsym $mod+b exec firejail --noroot --private=~/.firefox firefox -P default
+bindsym $mod+Shift+b exec firejail --noroot --private=~/.firefox firefox -P Other
 
 
 ## Window title colors
@@ -194,5 +195,4 @@ bindsym $mod+Shift+y exec redshift -O 6500
 
 ## Autostart
 exec --no-startup-id redshift -O 4000
-exec --no-startup-id i3-msg 'workspace 5; exec /usr/bin/thunderbird'
 exec --no-startup-id i3-msg 'workspace 1; exec /usr/bin/urxvtc'

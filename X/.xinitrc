@@ -18,8 +18,7 @@ xrdb -merge ~/.config/Xresources
 setxkbmap -option caps:escape	 ## bind caps lock as escape
 xscreensaver -no-splash &        ## set screensaver daemon
 xsetroot -cursor_name left_ptr & ## set cursor icon
-sh ~/.fehbg &                    ## set background image
 urxvtd -q -o -f                  ## start urxvt daemon
-mpdcron                          ## start mpdcron daemon
-unclutter &
+#sync &                           ## monitor calendar directory
 exec i3                          ## finally, start window manager. When i3 exits, this script exits, bringing along xorg with it.
+

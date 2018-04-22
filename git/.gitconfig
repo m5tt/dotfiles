@@ -1,6 +1,6 @@
 [user]
-	name = m5tt
-	email = arks36@protonmail.ch\n
+	name = Matt
+	email = mattb1397@protonmail.com
 [ui]
 	color = true
 [color]
@@ -8,3 +8,7 @@
 	branch = auto
 [credential]
 	helper = cache --timeout=3600
+[core]
+	excludesfile = /home/matt/.config/gitignore
+	autocrlf = input
+	pager = diff-so-fancy | less --tabs=4 -RFX
