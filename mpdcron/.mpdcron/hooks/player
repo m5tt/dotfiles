@@ -1,1 +1,0 @@
-pkill -SIGRTMIN+14 i3blocks
