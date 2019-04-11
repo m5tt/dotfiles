@@ -205,3 +205,6 @@ bindsym $mod+o border toggle
 # gaps
 gaps inner 5
 gaps outer 5
+
+# wtf
+exec_always ~/.screenlayout/layout.sh
