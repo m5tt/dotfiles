@@ -205,3 +205,6 @@ bindsym $mod+o border toggle
 # gaps
 gaps inner 5
 gaps outer 5
+
+# turn off cursor following focus
+focus_follows_mouse no

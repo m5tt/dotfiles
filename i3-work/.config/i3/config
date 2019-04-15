@@ -206,5 +206,8 @@ bindsym $mod+o border toggle
 gaps inner 5
 gaps outer 5
 
-# wtf
+# set screen layout
 exec_always ~/.screenlayout/layout.sh
+
+# turn off cursor following
+focus_follows_mouse no
