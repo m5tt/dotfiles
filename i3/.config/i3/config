@@ -208,3 +208,8 @@ gaps outer 5
 
 # turn off cursor following focus
 focus_follows_mouse no
+
+# small floating terminal
+for_window [instance="terminator" title="floatingt"] floating enable
+bindsym $mod+Shift+Return exec --no-startup-id terminator --title floatingt --geometry 1000x400
+
