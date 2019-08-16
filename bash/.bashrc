@@ -34,6 +34,8 @@ export LESS_TERMCAP_us=$'\E[01;32m'
 ## counting symlinks to directories as directores (-L)
 alias ls='ls --color=always -h -1X -L --group-directories-first'
 
+alias vim='nvim'
+
 ## For sudo aliases
 alias sudo='sudo '
 

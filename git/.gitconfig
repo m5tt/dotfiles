@@ -11,4 +11,3 @@
 [core]
 	excludesfile = /home/matt/.config/gitignore
 	autocrlf = input
-	pager = diff-so-fancy | less --tabs=4 -RFX
